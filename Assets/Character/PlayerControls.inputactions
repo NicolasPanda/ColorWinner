@@ -57,7 +57,7 @@
                     "name": "",
                     "id": "c1975953-7f93-45a5-b1b2-628d6e1f4c73",
                     "path": "<Gamepad>/rightTrigger",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
                     "action": "Shoot",

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
+using UnityTimer;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
@@ -14,11 +15,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float gravityValue = -9.81f;
     [SerializeField]
-    private float bulletSpeed = 10f;
-    private Vector3 _playerVelocity;
-
+    private float bulletSpeed = 30f;
+    [SerializeField]
+    private float shootCooldown = 0.5f;
     [SerializeField]
     private GameObject bullet;
+
+    [SerializeField]
+    private GameObject bulletSpawner;
+
+    private bool _canShoot = true;
+    private Vector3 _playerVelocity;
+
     
     private PlayerInput _playerInput;
     private InputAction _shootInput;
@@ -63,10 +71,36 @@ public class PlayerController : MonoBehaviour
         _playerVelocity.y += gravityValue * Time.deltaTime;
     }
 
-    void Fire()
+    private void Fire()
     {
-        var newBullet = Instantiate(bullet, transform.position, transform.rotation);
-        newBullet.GetComponent<Rigidbody>().velocity = -transform.forward * bulletSpeed;
+        if (!_canShoot) return;
+        
+        _canShoot = false;
+        var position = bulletSpawner.transform.position;
+        var t = transform;
+        var newBullet = Instantiate(bullet);
+        newBullet.gameObject.GetComponent<Bullet>().type = playerType;
+        newBullet.transform.position = position;
+        newBullet.transform.rotation = t.rotation;
+        newBullet.GetComponent<Rigidbody>().velocity = -t.forward * bulletSpeed;
+
+        Timer.Register(shootCooldown, () => _canShoot = true);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (playerType == PlayerType.PlayerRed)
+        {
+            if (other.gameObject.layer != LayerMask.NameToLayer("Red")) return;
+            //TODO: +1 point for playerRed
+            Destroy(other.gameObject);
+        }
+        if (playerType == PlayerType.PlayerBlue)
+        {
+            if (other.gameObject.layer != LayerMask.NameToLayer("Blue")) return;
+            //TODO: +1 point for playerBlue
+            Destroy(other.gameObject);
+        }
     }
 }
 
