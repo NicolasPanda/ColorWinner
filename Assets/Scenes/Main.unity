@@ -533,7 +533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Active: 1
   Label: Sound
-  Chance: 90
+  Chance: 100
   Timing:
     TimescaleMode: 0
     ExcludeFromHoldingPauses: 0
@@ -633,8 +633,8 @@ MonoBehaviour:
   Feedbacks:
   - {fileID: 551028460}
   - {fileID: 551028462}
-  - {fileID: 551028458}
   - {fileID: 551028459}
+  - {fileID: 551028458}
   InitializationMode: 2
   SafeMode: 3
   Direction: 0
@@ -679,9 +679,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 139de37acff665248bab15fcf1bbd78c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Active: 1
+  Active: 0
   Label: Light
-  Chance: 100
+  Chance: 6
   Timing:
     TimescaleMode: 0
     ExcludeFromHoldingPauses: 0
@@ -5874,6 +5874,8 @@ GameObject:
   - component: {fileID: 1082474440}
   - component: {fileID: 1082474439}
   - component: {fileID: 1082474438}
+  - component: {fileID: 1082474444}
+  - component: {fileID: 1082474445}
   m_Layer: 0
   m_Name: RAIN
   m_TagString: Untagged
@@ -5943,7 +5945,7 @@ MonoBehaviour:
   AutoResumeAfter: 0.25
   LoopAtLastPause: 1
   LoopAtLastLoopStart: 1
-  InfiniteLoop: 0
+  InfiniteLoop: 1
   NumberOfLoops: 2
   NumberOfLoopsLeft: 1
   InInfiniteLoop: 0
@@ -5983,14 +5985,14 @@ MonoBehaviour:
     Quantized: 0
     TargetBPM: 120
   DebugActive: 0
-  Sfx: {fileID: 8300000, guid: fefd12377f2264b72be4c01f9036ac33, type: 3}
+  Sfx: {fileID: 8300000, guid: b5195ae9e162bee499132678c2176e07, type: 3}
   RandomSfx: []
   TestButton: 0
   TestStopButton: 0
   PlayMethod: 0
   PoolSize: 10
-  MinVolume: 0.2
-  MaxVolume: 0.3
+  MinVolume: 0.4
+  MaxVolume: 0.6
   MinPitch: 1
   MaxPitch: 1
   SfxAudioMixerGroup: {fileID: 0}
@@ -6008,7 +6010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Active: 1
   Label: Sound
-  Chance: 9
+  Chance: 100
   Timing:
     TimescaleMode: 0
     ExcludeFromHoldingPauses: 0
@@ -6030,14 +6032,14 @@ MonoBehaviour:
     Quantized: 0
     TargetBPM: 120
   DebugActive: 0
-  Sfx: {fileID: 8300000, guid: 75e37c7accc1147e0836a1fcfd790a39, type: 3}
+  Sfx: {fileID: 8300000, guid: de2c4abed86752747999821c65bbd32c, type: 3}
   RandomSfx: []
   TestButton: 0
   TestStopButton: 0
   PlayMethod: 0
   PoolSize: 10
-  MinVolume: 0.2
-  MaxVolume: 0.3
+  MinVolume: 0.1
+  MaxVolume: 0.2
   MinPitch: 1
   MaxPitch: 1
   SfxAudioMixerGroup: {fileID: -3165942800488051908, guid: 7e984f512e89b60468e829489e8883e3, type: 2}
@@ -6055,7 +6057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Active: 1
   Label: Particles Play
-  Chance: 9
+  Chance: 100
   Timing:
     TimescaleMode: 0
     ExcludeFromHoldingPauses: 0
@@ -6101,7 +6103,7 @@ MonoBehaviour:
     TimescaleMode: 0
     ExcludeFromHoldingPauses: 0
     ContributeToTotalDuration: 1
-    InitialDelay: 1
+    InitialDelay: 0.2
     CooldownDuration: 0
     InterruptsOnStop: 1
     NumberOfRepeats: 0
@@ -6141,14 +6143,16 @@ MonoBehaviour:
   Feedbacks:
   - {fileID: 1082474442}
   - {fileID: 1082474441}
-  - {fileID: 1082474438}
-  - {fileID: 1082474440}
   - {fileID: 1082474439}
+  - {fileID: 1082474440}
+  - {fileID: 1082474445}
+  - {fileID: 1082474444}
+  - {fileID: 1082474438}
   InitializationMode: 2
   SafeMode: 3
   Direction: 0
   AutoChangeDirectionOnEnd: 0
-  AutoPlayOnStart: 0
+  AutoPlayOnStart: 1
   AutoPlayOnEnable: 0
   DurationMultiplier: 1
   DisplayFullDurationDetails: 0
@@ -6176,6 +6180,91 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   DebugActive: 0
+--- !u!114 &1082474444
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082474436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f1480e377932bb4cab1ab6851bbdbf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Active: 1
+  Label: Holding Pause
+  Chance: 50
+  Timing:
+    TimescaleMode: 0
+    ExcludeFromHoldingPauses: 0
+    ContributeToTotalDuration: 1
+    InitialDelay: 0
+    CooldownDuration: 0
+    InterruptsOnStop: 1
+    NumberOfRepeats: 0
+    RepeatForever: 0
+    DelayBetweenRepeats: 1
+    MMFeedbacksDirectionCondition: 0
+    PlayDirection: 0
+    ConstantIntensity: 0
+    UseIntensityInterval: 0
+    IntensityIntervalMin: 0
+    IntensityIntervalMax: 0
+    Sequence: {fileID: 0}
+    TrackID: 0
+    Quantized: 0
+    TargetBPM: 120
+  DebugActive: 0
+  PauseDuration: 60
+  RandomizePauseDuration: 0
+  MinPauseDuration: 1
+  MaxPauseDuration: 3
+  RandomizeOnEachPlay: 1
+  ScriptDriven: 0
+  AutoResume: 0
+  AutoResumeAfter: 0.25
+--- !u!114 &1082474445
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082474436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c27131831afa28b499cb120fc9059997, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Active: 1
+  Label: Particles Play
+  Chance: 100
+  Timing:
+    TimescaleMode: 0
+    ExcludeFromHoldingPauses: 0
+    ContributeToTotalDuration: 1
+    InitialDelay: 60
+    CooldownDuration: 0
+    InterruptsOnStop: 1
+    NumberOfRepeats: 0
+    RepeatForever: 0
+    DelayBetweenRepeats: 1
+    MMFeedbacksDirectionCondition: 0
+    PlayDirection: 0
+    ConstantIntensity: 0
+    UseIntensityInterval: 0
+    IntensityIntervalMin: 0
+    IntensityIntervalMax: 0
+    Sequence: {fileID: 0}
+    TrackID: 0
+    Quantized: 0
+    TargetBPM: 120
+  DebugActive: 0
+  Mode: 1
+  BoundParticleSystem: {fileID: 976672182}
+  RandomParticleSystems: []
+  MoveToPosition: 0
+  ActivateOnPlay: 0
 --- !u!1 &1196173392
 GameObject:
   m_ObjectHideFlags: 0
@@ -6478,10 +6567,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1803988451}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ecb76331b2602f4ba888267530cbfce, type: 3}
+  m_Script: {fileID: 11500000, guid: 32dd23bf97680be41a75b45b50f0d8ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   TargetFPS: 300
+  RenderFrameInterval: 0
   VSyncCount: 0
 --- !u!1 &1813177116
 GameObject:
