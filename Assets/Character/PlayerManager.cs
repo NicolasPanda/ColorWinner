@@ -23,10 +23,12 @@ public class PlayerManager : MonoBehaviour
         var playercount = PlayerInputManager.playerCount;
         if (playercount == 1)
         {
+            playerInput.gameObject.GetComponent<PlayerController>().playerType = PlayerType.PlayerBlue;
             playerInput.gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().material = materialBlue;
         }
         if (playercount == 2)
         {
+            playerInput.gameObject.GetComponent<PlayerController>().playerType = PlayerType.PlayerRed;
             playerInput.gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().material = materialRed;
         }
     }

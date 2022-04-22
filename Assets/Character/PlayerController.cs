@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private CharacterController controller;
     private Vector3 playerVelocity;
+    public PlayerType playerType;
 
     private Vector2 movementInput = Vector2.zero;
     private bool shootInput = false;
@@ -42,4 +43,10 @@ public class PlayerController : MonoBehaviour
         
         controller.Move(playerVelocity * Time.deltaTime);
     }
+}
+
+public enum PlayerType
+{
+    PlayerBlue,
+    PlayerRed
 }
