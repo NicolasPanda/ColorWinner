@@ -8,9 +8,9 @@ using UnityEngine.InputSystem;
 public class PlayerManager : MonoBehaviour
 {
     [SerializeField]
-    private Material materialRed;
+    private GameObject playerRed;
     [SerializeField]
-    private Material materialBlue;
+    private GameObject playerBlue;
     private PlayerInputManager PlayerInputManager;
     private void Awake()
     {
@@ -23,13 +23,13 @@ public class PlayerManager : MonoBehaviour
         var playercount = PlayerInputManager.playerCount;
         if (playercount == 1)
         {
+            Instantiate(playerBlue, playerInput.gameObject.transform);
             playerInput.gameObject.GetComponent<PlayerController>().playerType = PlayerType.PlayerBlue;
-            playerInput.gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().material = materialBlue;
         }
         if (playercount == 2)
         {
+            Instantiate(playerRed, playerInput.gameObject.transform);
             playerInput.gameObject.GetComponent<PlayerController>().playerType = PlayerType.PlayerRed;
-            playerInput.gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().material = materialRed;
         }
     }
 }

@@ -410,8 +410,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16e8a1d768bfb1a4c99ecce75288fab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materialRed: {fileID: 2100000, guid: 1675546b432c47941b3ddd6a1fc40bf5, type: 2}
-  materialBlue: {fileID: 2100000, guid: a50562691b6c0e349a4bc19fb9d0ec83, type: 2}
+  playerRed: {fileID: 3613116354253600955, guid: 53c350dbe7fb8ae43a0ae23bab4dddb6, type: 3}
+  playerBlue: {fileID: 6155052852098364673, guid: a4b9de64ccad9b343bf1b72ab8185e5d, type: 3}
 --- !u!1 &1679825726
 GameObject:
   m_ObjectHideFlags: 0
