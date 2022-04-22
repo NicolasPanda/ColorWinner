@@ -33,17 +33,6 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "e7034e63-094d-4e2c-ace1-ce0aeb361705",
-                    "path": "<Gamepad>/rightTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Shoot",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "448cdf74-b034-4d61-a94c-da1b8768b3e1",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
@@ -61,6 +50,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c1975953-7f93-45a5-b1b2-628d6e1f4c73",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

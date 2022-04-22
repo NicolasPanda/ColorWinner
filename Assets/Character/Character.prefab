@@ -49,6 +49,7 @@ MonoBehaviour:
   playerSpeed: 4
   controller: {fileID: 0}
   gravityValue: -9.81
+  bullet: {fileID: 462521845281346453, guid: 8594d28d02528e34684f57b000b357ee, type: 3}
   playerType: 0
 --- !u!114 &8992663571422009589
 MonoBehaviour:
