@@ -531,7 +531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Active: 1
   Label: Sound
-  Chance: 100
+  Chance: 90
   Timing:
     TimescaleMode: 0
     ExcludeFromHoldingPauses: 0
